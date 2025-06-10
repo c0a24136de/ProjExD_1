@@ -10,6 +10,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg") #背景画像のsurface
+    bg_img1 = pg.transform.flip(bg_img,True,False)
     bg_img2 = pg.image.load("fig/3.png")
     bg_img2 = pg.transform.flip(bg_img2,True,False)
     tmr = 0
@@ -21,6 +22,7 @@ def main():
         x = tmr
         screen.blit(bg_img, [-x, 0]) 
         screen.blit(bg_img,[-x+1600,0])
+        screen.blit(bg_img1,[-x+1600,0])
         screen.blit(bg_img2, [300,200])
         pg.display.update()
         tmr += 1        
